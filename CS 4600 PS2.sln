@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B10C7D0A-8B05-4854-B487-532C043918FD}"
+	ProjectSection(SolutionItems) = preProject
+		ground.jpg = ground.jpg
+		project2.html = project2.html
+		project2.js = project2.js
+		propeller.png = propeller.png
+		shadow.png = shadow.png
+		uav.png = uav.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F31AA46B-4951-4BE4-A91F-E16034402254}
+	EndGlobalSection
+EndGlobal
