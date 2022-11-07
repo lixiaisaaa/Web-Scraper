@@ -14,7 +14,7 @@ function GetTransform( positionX, positionY, rotation, scale )
 	
     scaleMatrix = [scale, 0, 0, 0, scale, 0, 0, 0, 1];
 
-	rotationMatrix = [cost, sint, 0, -sint, cost, 0, 0, 0, 1];
+	rotationMatrix = [cost, sint, 0, -   sint, cost, 0, 0, 0, 1];
 
 	return ApplyTransform(ApplyTransform(scaleMatrix, rotationMatrix), transMatrix);
 }
