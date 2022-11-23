@@ -115,14 +115,14 @@ namespace CourseScraper
             
                 try
                 {
-                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
                     var input_the_search = _driver.FindElement(By.XPath("//*[@id=\"top\"]/div/div[2]/span/div/div/div/input"));
-                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
                     input_the_search.SendKeys(courseText.Text.ToString());
-                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
                     input_the_search.SendKeys(Keys.Return);
                     var click_on_course = _driver.FindElement(By.PartialLinkText(courseText.Text.ToUpper()));
-                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
                     click_on_course.Click();
                     var course_Division = _driver.FindElements(By.ClassName("course-view__pre___2VF54"));
                     int index = 0;
@@ -192,9 +192,9 @@ namespace CourseScraper
         {
             _driver.Navigate().GoToUrl(url);
             _driver.Manage().Window.Size = new Size(1920, 1080);//get full size window so we can scrape
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             var seating_link_click = _driver.FindElement(By.LinkText("Seating availability for all CS classes"));
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             seating_link_click.Click();
             var table = _driver.FindElement(By.TagName("table"));
             var body = table.FindElements(By.XPath("//tbody//tr"));
