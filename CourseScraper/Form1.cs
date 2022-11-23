@@ -83,7 +83,10 @@ namespace CourseScraper
         {
             
         }
-        //Scrape
+
+        /*Scrape Single Class
+         * 
+         */
         private void button1_Click(object sender, EventArgs e)
         {
             if(textBox1.Text == "" || courseText.Text == "")
@@ -108,7 +111,10 @@ namespace CourseScraper
             scrape(url);
         }
 
-        public void scrape(String url)
+        /*
+         * This is a private helper method for scraping class.
+        */
+        private void scrape(String url)
         {
             _driver.Navigate().Refresh();
             _driver.Navigate().GoToUrl(url);
@@ -187,7 +193,10 @@ namespace CourseScraper
                     richTextBox1.Text += "The course you are looking for is not found";
                 }
             }
-            
+         
+        /**
+         * private helper method to get full enrollment
+         */
         private void getFullEnroll(String url)
         {
             _driver.Navigate().GoToUrl(url);
@@ -261,7 +270,9 @@ namespace CourseScraper
             button3.Enabled = true;
         }
 
-        //Find Enrollment
+        /**Find Enrollment
+         * 
+         */
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == ""  || comboBox1.Text == "")
@@ -301,7 +312,8 @@ namespace CourseScraper
 
         
 
-        //Save 
+        /**Save
+         */
         private void button3_Click(object sender, EventArgs e)
         {
             SaveFileDialog savefile = new SaveFileDialog();
