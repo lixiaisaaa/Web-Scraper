@@ -15,6 +15,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Diagnostics.Metrics;
+using System.Net.Http.Json;
 using System.Security.Policy;
 using System.Text;
 using Application = System.Windows.Forms.Application;
@@ -305,10 +306,7 @@ namespace CourseScraper
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            HttpClient client = new HttpClient();
-        }
+       
 
         
 
@@ -363,7 +361,51 @@ namespace CourseScraper
         {
 
         }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                List<Course> courses = new List<Course>();
+                for(int i = 0; i < classNumber.Count; i++)
+                {
+                    courses.Add(new Course
+                    {
+                        credit = credits[i],
+                        title = title[i],
+                        catalogNumber = catagorieNumber[i],
+                        section = section[i],
+                        semester = comboBox1.SelectedText.ToString(),
+                        year = textBox1.Text,
+                        pID = pID[i],
+                        Enroll = enrollment[i],
+                        subject = subject[i]
+                    }) ;
+                }
+               // HttpResponseMessage response = await client.PostAsJsonAsync<List<Course>>("https://localhost:7008/Courses/UploadCourses", courses);
+                //
 
-        
+            }
+            catch
+            {
+                richTextBox1.Text += "The data can not be posted, please try another way" + "\r\n";
+            }
+        }
+
+
+    }
+
+    public class Course
+    {
+        public string credit { get; set; }
+        public string title { get; set; }
+        public string catalogNumber { get; set; }
+        public string section { get; set; }
+        public string semester { get; set; }
+        public string year { get; set; }
+        public string pID { get; set; }
+        public string Enroll { get; set; }
+        public string subject { get; set; }
+       
     }
 }
